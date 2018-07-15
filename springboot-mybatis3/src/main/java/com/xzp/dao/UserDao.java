@@ -13,4 +13,8 @@ import java.util.List;
 public interface UserDao {
     List<User> findAll();
     int insertUser(User user);
+
+    int updateMulti(User user);
+
+    int update2(List<User> list);
 }

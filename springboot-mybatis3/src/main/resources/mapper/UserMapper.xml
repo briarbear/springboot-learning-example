@@ -36,4 +36,24 @@
         <include refid="BASE_TABLE"/>
     </select>
 
+
+
+    <update id="updateMulti" parameterType="com.xzp.domain.User">
+        update
+        <include refid="BASE_TABLE"/>
+        <set>
+            <if test="password != null">
+                password = #{password,jdbcType=VARCHAR}
+            </if>
+        </set>
+
+        where
+          username = #{username,jdbcType = VARCHAR}
+    </update>
+
+    <update id="update2" parameterType="java.util.List">
+            update user
+            set password=
+
+    </update>
 </mapper>
